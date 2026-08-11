@@ -1,5 +1,9 @@
 <script setup>
-
+import Promo from "./components/promo.vue"
+import About from "./components/about.vue"
+import Catalog from "./components/catalog.vue"
+import Contacts from "./components/contacts.vue"
+import Reviews from "./components/reviews.vue"
 </script>
 
 <template>
@@ -16,20 +20,28 @@
           <li><a href="#">Контакты </a></li>
         </ul>
       </nav>
-      <!-- <div class="tel"> -->
-      <a href="tel:+78005553535">+7(966)-888-55-55</a>
-      <!-- </div> -->
+      <div class="tel flex">
+        <img src="./assets/phone.svg" alt="">
+        <a href="tel:+78005553535">+7(966)-888-55-55</a>
+      </div>
     </div>
   </header>
-  <HelloWorld />
+  <main>
+
+    <Promo />
+  </main>
+
   <footer>
     <div class="flex flex_footer">
       <div class="icons">
-        <a href="#"><img src="./assets/tg.png" alt="Телеграмм"></a>
-        <a href="#"><img src="./assets/vk.png" alt="Вконтакте"></a>
+        <a href="#" class="tg"></a>
+        <a href="#" class="vk"></a>
       </div>
       <p>© 2026 Мыловар. Все права защищены.</p>
-      <a href="tel:+78005553535">+7(966)-888-55-55</a>
+      <div class="tel flex">
+        <img src="./assets/phone_f.svg" alt="">
+        <a href="tel:+78005553535">+7(966)-888-55-55</a>
+      </div>
     </div>
   </footer>
 </template>
@@ -38,6 +50,7 @@
 /* Общие стили */
 .flex {
   display: flex;
+  height: 100%;
 }
 
 ul {
@@ -46,11 +59,21 @@ ul {
 }
 
 li {
-  padding: 0 15px;
-  border: 1px solid #BC7B6F;
-  border-radius: 25px;
   margin: 0 25px;
+
+  a {
+    padding: 0 15px;
+    border: 1px solid #BC7B6F;
+    border-radius: 25px;
+  }
+
+  a:hover {
+    background-color: #BC7B6F;
+    border: 1px solid #BC7B6F;
+    color: #F5F5F5;
+  }
 }
+
 
 a {
   text-decoration: none;
@@ -73,16 +96,40 @@ a {
 }
 
 
-/* ?? */
+/* main */
+main {
+  background-color: #F4E4E4;
+  border-radius: 60px;
+}
 
 /* Подвал */
 .flex_footer {
   justify-content: space-around;
   align-items: center;
   background-color: #BC7B6F;
-  p,a{
+
+  p,
+  a {
     color: #fff;
   }
-  
+
+}
+
+.icons {
+  a {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+  }
+}
+
+.tg {
+  background-image: url(./assets/tg.svg);
+  margin: 0 27px 0 0;
+}
+
+.vk {
+  background-image: url(./assets/vk.svg);
+  margin: 0 0 0 27px;
 }
 </style>
