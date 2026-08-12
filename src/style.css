@@ -143,6 +143,10 @@ button:hover {
   color: #F5F5F5;
 }
 
+.flex {
+  display: flex;
+}
+
 code,
 .counter {
   font-family: var(--mono);

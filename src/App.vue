@@ -29,6 +29,7 @@ import Reviews from "./components/reviews.vue"
   <main>
 
     <Promo />
+    <About />
   </main>
 
   <footer>
@@ -49,7 +50,7 @@ import Reviews from "./components/reviews.vue"
 <style scoped>
 /* Общие стили */
 .flex {
-  display: flex;
+  /* display: flex; */
   height: 100%;
 }
 

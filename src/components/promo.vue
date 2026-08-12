@@ -17,20 +17,21 @@
 </template>
 
 <style scoped>
-.flex>div {
-    width: 50%;
-}
+/* .flex>div {
+    width: 55%;
+} */
 
 .promo_content {
     padding: 30px 90px 30px 90px;
 }
 
 .text {
+    width: 55%;
     padding: 0 90px 0 0;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
 
     button {
