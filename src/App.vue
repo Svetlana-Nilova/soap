@@ -30,6 +30,7 @@ import Reviews from "./components/reviews.vue"
 
     <Promo />
     <About />
+    <Catalog />
   </main>
 
   <footer>
