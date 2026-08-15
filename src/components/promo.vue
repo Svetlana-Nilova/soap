@@ -11,7 +11,7 @@
             <button class="item">Отправить заявку</button>
         </div>
         <div class="img">
-            <img src="" alt="картинка промо">
+            <img src="../assets/catalog3.jpg" alt="картинка промо">
         </div>
     </div>
 </template>
@@ -47,7 +47,14 @@
     width: 538px;
     height: 538px;
     background-color: #F5F5F5;
-    border: 3px solid #D9A69F;
     border-radius: 60px;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border: 3px solid #D9A69F;
+        border-radius: 60px;
+    }
 }
 </style>

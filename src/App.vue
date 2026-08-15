@@ -31,6 +31,7 @@ import Reviews from "./components/reviews.vue"
     <Promo />
     <About />
     <Catalog />
+    <Reviews />
   </main>
 
   <footer>

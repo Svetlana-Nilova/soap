@@ -25,13 +25,13 @@ function back() {
 </script>
 
 <template>
-    <div class="flex">
+    <div class="flex grechnevai">
         <div class="container">
             <h2>
                 Каталог
             </h2>
             <div class="slider-wrapper">
-                <button class="btn left" @click="back">⬅</button>
+                <button class="btn left" @click="back"></button>
                 <div class="foto">
                     <div ref="slidesRef" class="slides flex">
                         <img src="../assets/catalog1.jpg" alt="">
@@ -40,7 +40,11 @@ function back() {
                         <img src="../assets/catalog4.jpg" alt="">
                     </div>
                 </div>
-                <button class="btn right" @click="next">⮕</button>
+                <button class="btn right" @click="next"></button>
+            </div>
+            <div class="dots">
+                <span v-for="n in slidesC" :key="n - 1" class="dot" :class="{ active: cSlide === n - 1 }"
+                    @click="cSlide = n - 1"></span>
             </div>
         </div>
         <div class="info">
@@ -51,7 +55,7 @@ function back() {
                 <div class="babl">
 
                     <img src="../assets/babl.svg" alt="">
-                    <p>1</p>
+                    <span>1</span>
                 </div>
                 <p>Оставьте заявку</p>
             </div>
@@ -59,7 +63,7 @@ function back() {
                 <div class="babl">
 
                     <img src="../assets/babl.svg" alt="">
-                    <p>2</p>
+                    <span>2</span>
                 </div>
                 <p>Мы свяжемся</p>
             </div>
@@ -67,7 +71,7 @@ function back() {
                 <div class="babl">
 
                     <img src="../assets/babl.svg" alt="">
-                    <p>3</p>
+                    <span>3</span>
                 </div>
                 <p>Обсудим детали</p>
             </div>
@@ -75,7 +79,7 @@ function back() {
                 <div class="babl">
 
                     <img src="../assets/babl.svg" alt="">
-                    <p>4</p>
+                    <span>4</span>
                 </div>
                 <p>Получите мыло</p>
             </div>
@@ -88,6 +92,10 @@ function back() {
     box-sizing: border-box;
 }
 
+.grechnevai {
+    padding: 0 0 30px 0;
+}
+/* КАТАЛОГ */
 .container {
     width: 50%;
     padding: 0 20px 20px 20px;
@@ -102,17 +110,60 @@ function back() {
 
 .btn {
     flex-shrink: 0;
-    padding: 12px 18px;
+    padding: 18px 18px;
     font-size: 24px;
     cursor: pointer;
-    /* background: #eee;
-  border: 1px solid #ccc;
-  border-radius: 8px; */
 }
 
+.left {
+    background: url(../assets/left.svg) no-repeat center;
+    border: 8px double #BC7B6F;
+    border-radius: 8px;
+}
+
+.left:hover {
+    border: 8px solid #BC7B6F;
+}
+
+.right {
+    background: url(../assets/right.svg) no-repeat center;
+    border: 8px double #BC7B6F;
+    border-radius: 8px;
+}
+
+.right:hover {
+    border: 8px solid #BC7B6F;
+}
+
+.dots {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #F5F5F5B2;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.dot.active {
+    background: #BC7B6F;
+    transform: scale(1.2);
+}
+
+.dot:hover {
+    background: #BC7B6F;
+}
+
+/* КАК ЗАКАЗАТЬ */
 .babl_item {
     align-items: center;
-    justify-content: center;
+    margin: 0 15%;
 }
 
 .babl_item p {
@@ -121,15 +172,44 @@ function back() {
     font-style: Regular;
     font-size: 28px;
     line-height: 50px;
-    letter-spacing: 10%;
-    text-align: center;
+    letter-spacing: 5%;
     vertical-align: middle;
 
+    padding: 0 0 0 25px;
 }
 
 .babl {
     width: 129px;
-    height: 127px;
+    position: relative;
+    display: inline-block;
+}
+
+.babl span {
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    font-family: Tenor Sans;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 32px;
+    line-height: 50px;
+    letter-spacing: 10%;
+    text-align: center;
+    vertical-align: middle;
+    color: #BC7B6F;
+
+
+}
+
+.babl img {
+    width: 120px;
+}
+
+.babl span,
+img {
+    vertical-align: middle;
 }
 
 .foto {
