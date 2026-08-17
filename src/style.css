@@ -65,6 +65,8 @@
 
 body {
   margin: 0;
+  background-color: #F5F5F5;
+  /* background: url(./assets/backg3.svg) ;  #ece6e6*/
 }
 
 button {
@@ -109,7 +111,8 @@ h2 {
     font-size: 20px;
   }
 } */
-p, span{
+p,
+span {
   font-family: 'Tenor Sans', sans-serif;
   font-weight: 400;
   font-style: Regular;
@@ -225,7 +228,6 @@ code {
   max-width: 100%;
   margin: 0 auto;
   text-align: center;
-  border-inline: 1px solid var(--border);
   min-height: 100svh;
   display: flex;
   flex-direction: column;

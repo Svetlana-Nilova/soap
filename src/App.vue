@@ -32,6 +32,7 @@ import Reviews from "./components/reviews.vue"
     <About />
     <Catalog />
     <Reviews />
+    <Contacts />
   </main>
 
   <footer>
@@ -54,6 +55,18 @@ import Reviews from "./components/reviews.vue"
 .flex {
   /* display: flex; */
   height: 100%;
+}
+
+header {
+  background-color: #F5F5F5;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+main {
+  margin: 10px;
 }
 
 ul {
@@ -100,9 +113,30 @@ a {
 
 
 /* main */
+/* #ece6e6 */
 main {
-  background-color: #F4E4E4;
+  position: relative;
+  background: url(./assets/backg4.svg) center/contain;
+  /* background-color: #F4E4E4; */
+  /* #ece6e6 */
   border-radius: 60px;
+  min-height: 100vh;
+}
+
+main::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 60px;
+  background: url(./assets/backg4.svg) center/contain;
+  /* opacity: 0.6;           */
+  pointer-events: none;
+  z-index: 0;
+}
+
+main>* {
+  position: relative;
+  z-index: 1;
 }
 
 /* Подвал */

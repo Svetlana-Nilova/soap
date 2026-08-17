@@ -84,7 +84,7 @@ function back() {
 
 .review {
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
 .review img {
@@ -118,6 +118,10 @@ function back() {
 
 .right:hover {
   border: 8px solid #BC7B6F;
+}
+
+.text {
+  text-align: left !important;
 }
 
 .dots {
