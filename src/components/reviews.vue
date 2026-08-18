@@ -101,22 +101,24 @@ function back() {
 }
 
 .left {
-  background: url(../assets/left.svg) no-repeat center;
+  background: url(../assets/left_off.svg) no-repeat center;
   border: 8px double #BC7B6F;
   border-radius: 8px;
 }
 
 .left:hover {
+  background: url(../assets/left_on.svg) no-repeat center;
   border: 8px solid #BC7B6F;
 }
 
 .right {
-  background: url(../assets/right.svg) no-repeat center;
+  background: url(../assets/right_off.svg) no-repeat center;
   border: 8px double #BC7B6F;
   border-radius: 8px;
 }
 
 .right:hover {
+  background: url(../assets/right_on.svg) no-repeat center;
   border: 8px solid #BC7B6F;
 }
 
