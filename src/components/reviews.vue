@@ -62,16 +62,18 @@ function back() {
 .conteiner {
   justify-content: center;
   align-items: center;
+  gap: 15px;
 }
 
 .revCont {
   width: 1126px;
+  max-width: 100%;
   height: 517px;
   border-radius: 30px;
   border: 3px solid #BC7B6F;
   background: #F5F5F5;
-  margin: 0 30px;
   overflow: hidden;
+  flex-shrink: 1;
 }
 
 .slides {
@@ -85,11 +87,15 @@ function back() {
 .review {
   align-items: center;
   justify-content: space-evenly;
+  padding: 20px;
+  gap: 20px;
 }
 
 .review img {
   width: 462px;
+  max-width: 50%;
   height: 420px;
+  object-fit: cover;
   border-radius: 30px;
 }
 
@@ -98,6 +104,8 @@ function back() {
   padding: 18px 18px;
   font-size: 24px;
   cursor: pointer;
+  background: transparent;
+  border: none;
 }
 
 .left {
@@ -105,25 +113,35 @@ function back() {
   border: 8px double #BC7B6F;
   border-radius: 8px;
 }
-
 .left:hover {
   background: url(../assets/left_on.svg) no-repeat center;
   border: 8px solid #BC7B6F;
 }
-
 .right {
   background: url(../assets/right_off.svg) no-repeat center;
   border: 8px double #BC7B6F;
   border-radius: 8px;
 }
-
 .right:hover {
   background: url(../assets/right_on.svg) no-repeat center;
   border: 8px solid #BC7B6F;
 }
 
 .text {
-  text-align: left !important;
+  text-align: left;
+}
+
+.text p:first-child {
+  font-weight: bold;
+  font-size: 22px;
+  color: #BC7B6F;
+}
+
+.stars {
+  width: 209px;
+  height: 41px;
+  background: url(../assets/stars5.svg) no-repeat;
+  background-size: contain;
 }
 
 .dots {
@@ -142,19 +160,80 @@ function back() {
   cursor: pointer;
   transition: background 0.3s, transform 0.2s;
 }
-
 .dot.active {
   background: #BC7B6F;
   transform: scale(1.2);
 }
-
 .dot:hover {
   background: #BC7B6F;
 }
 
-.stars {
-  width: 209px;
-  height: 41px;
-  background: url(../assets/stars5.svg) no-repeat;
+/* ===== Адаптив ===== */
+@media (max-width: 1024px) {
+  .revCont {
+    height: auto;
+    min-height: 400px;
+    border-radius: 20px;
+  }
+
+  .review {
+    flex-direction: column;
+    padding: 20px;
+    height: 100%;
+    justify-content: center;
+  }
+
+  .review img {
+    width: 80%;
+    max-width: 300px;
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+
+  .text {
+    text-align: center;
+  }
+
+  .btn {
+    padding: 12px 12px;
+    border-width: 5px;
+    background-size: 60% 60%;
+    min-width: 40px;
+    min-height: 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .conteiner {
+    gap: 8px;
+  }
+
+  .revCont {
+    border-radius: 16px;
+    min-height: 300px;
+  }
+
+  .review img {
+    max-width: 200px;
+  }
+
+  .text p:first-child {
+    font-size: 18px;
+  }
+  .stars {
+    width: 130px;
+    height: 26px;
+  }
+  .text p:last-child {
+    font-size: 14px;
+  }
+
+  .dots {
+    gap: 8px;
+  }
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
 }
 </style>
