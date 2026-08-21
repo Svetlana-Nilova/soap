@@ -97,6 +97,7 @@ function back() {
   height: 420px;
   object-fit: cover;
   border-radius: 30px;
+  box-shadow: 0px 4px 4px 0px #00000080;
 }
 
 .btn {

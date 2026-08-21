@@ -117,7 +117,6 @@ function back() {
   height: 420px;
   display: block;
   object-fit: cover;
-  border: 4px solid #d4b895;
   border-radius: 24px;
 }
 
@@ -135,15 +134,18 @@ function back() {
   border: 8px double #BC7B6F;
   border-radius: 8px;
 }
+
 .left:hover {
   background: url(../assets/left_on.svg) no-repeat center;
   border: 8px solid #BC7B6F;
 }
+
 .right {
   background: url(../assets/right_off.svg) no-repeat center;
   border: 8px double #BC7B6F;
   border-radius: 8px;
 }
+
 .right:hover {
   background: url(../assets/right_on.svg) no-repeat center;
   border: 8px solid #BC7B6F;
@@ -164,10 +166,12 @@ function back() {
   cursor: pointer;
   transition: background 0.3s, transform 0.2s;
 }
+
 .dot.active {
   background: #BC7B6F;
   transform: scale(1.2);
 }
+
 .dot:hover {
   background: #BC7B6F;
 }
@@ -176,6 +180,8 @@ function back() {
   flex: 1;
   overflow: hidden;
   min-width: 0;
+  box-shadow: 0px 4px 4px 0px #00000080;
+  border-radius: 30px;
 }
 
 /* КАК ЗАКАЗАТЬ */
@@ -207,7 +213,7 @@ function back() {
 .babl span {
   position: absolute;
   top: 42%;
-  left: 50%;
+  left: 46%;
   transform: translateX(-50%);
   font-size: 32px;
   line-height: 50px;
@@ -235,11 +241,12 @@ function back() {
   }
 
   .container {
+    max-width: 100%;
     padding: 0 10px 20px;
   }
 
   .babl_item {
-    margin: 0 5%;
+    margin: 0 20%;
   }
 
   .babl_item p {
@@ -275,13 +282,17 @@ function back() {
   .babl {
     width: 80px;
   }
+
   .babl img {
     width: 70px;
   }
+
   .babl span {
+    left: 44%;
     font-size: 22px;
     line-height: 30px;
   }
+
   .babl_item p {
     font-size: 18px;
     line-height: 28px;
@@ -292,6 +303,7 @@ function back() {
     gap: 8px;
     margin-top: 12px;
   }
+
   .dot {
     width: 10px;
     height: 10px;
@@ -299,8 +311,33 @@ function back() {
 }
 
 @media (max-width: 480px) {
+  .slider-wrapper {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .foto {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .slider-wrapper .btn {
+    order: 1;
+    margin: 5px 0;
+  }
+
+  .dots {
+    display: none;
+  }
+
+  .btn {
+    flex: 0 0 auto;
+    margin: 0 5px;
+  }
+
   .slides img {
-    height: 160px;
+    height: 200px;
   }
 
   .babl_item {
@@ -308,6 +345,7 @@ function back() {
     text-align: center;
     margin: 0;
   }
+
   .babl_item p {
     padding-left: 0;
   }

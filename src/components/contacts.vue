@@ -104,7 +104,7 @@
 
 /* ФОРМА */
 .forma {
-  width: 45%;
+  width: 53%;
   display: flex;
   justify-content: center;
 }
@@ -112,6 +112,7 @@
 form {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   align-items: center;
   background: #f5f5f5;
   border: 3px solid #BC7B6F;
@@ -128,7 +129,7 @@ form {
   border: 3px solid #BC7B6F;
   border-radius: 25px;
   padding: 12px 17px;
-  width: 100%;
+  min-width: 100%;
 }
 
 .inputs input,
@@ -155,6 +156,10 @@ form {
   color: #423A39;
 }
 
+.inputs textarea::placeholder {
+  transform: translateY(100%);
+}
+
 .btn {
   font-family: 'Tenor Sans', sans-serif;
   width: 237px;
@@ -178,7 +183,6 @@ form {
 /* ===== Адаптив ===== */
 @media (max-width: 1024px) {
   .cont {
-    flex-direction: column;
     align-items: center;
     padding: 30px 15px;
   }
@@ -189,6 +193,10 @@ form {
     max-width: 600px;
   }
 
+  .social {
+    width: 73%;
+  }
+
   .vk,
   .tg {
     max-width: 100%;
@@ -196,7 +204,9 @@ form {
 
   .tVk,
   .tTg {
-    top: 60%;
+    top: 64%;
+    display: flex;
+    flex-direction: column;
   }
 
   .tVk p,
@@ -209,6 +219,7 @@ form {
     font-size: 20px;
     padding: 10px 18%;
   }
+
   .a {
     padding: 10px 15%;
   }
@@ -222,12 +233,36 @@ form {
     max-width: 100%;
     height: 50px;
   }
+
   .inputs textarea {
     height: 50px;
+  }
+
+  .inputs textarea::placeholder {
+    transform: translateY(70%);
+  }
+}
+
+@media (max-width: 765px) {
+
+  .tVk p,
+  .tTg p {
+    font-size: 18px;
+    line-height: 26px;
   }
 }
 
 @media (max-width: 600px) {
+  .cont {
+    flex-direction: column-reverse;
+  }
+
+  .social {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+  }
+
   .tVk p,
   .tTg p {
     font-size: 16px;
@@ -238,6 +273,7 @@ form {
     font-size: 16px;
     padding: 8px 12%;
   }
+
   .a {
     padding: 8px 10%;
   }
@@ -245,6 +281,7 @@ form {
   form h2 {
     font-size: 24px;
   }
+
   form p {
     font-size: 16px;
   }
@@ -253,6 +290,10 @@ form {
   .inputs textarea {
     height: 44px;
     font-size: 14px;
+  }
+
+  .inputs textarea::placeholder {
+    transform: translateY(50%);
   }
 
   .btn {
@@ -275,19 +316,24 @@ form {
 
   .tVk,
   .tTg {
-    top: 55%;
+    top: 66%;
     width: 90%;
   }
 
   .tVk p,
   .tTg p {
-    font-size: 14px;
-    line-height: 22px;
+    font-size: 10px;
+    line-height: 14px;
+  }
+
+  .tTg p {
+    margin-top: -7px;
+    margin-bottom: 7px;
   }
 
   .btnS {
-    font-size: 14px;
-    padding: 6px 10%;
+    font-size: 12px;
+    padding: 0px 10%;
     border-radius: 20px;
   }
 
@@ -309,10 +355,20 @@ form {
     border-radius: 20px;
   }
 
+  .inputs textarea::placeholder {
+    transform: translateY(30%);
+  }
+
   .btn {
     height: 48px;
     font-size: 14px;
     margin-top: 18px;
+  }
+}
+@media (max-width: 480px) {
+  .tTg p {
+    margin-top: -2px;
+    margin-bottom: 2px;
   }
 }
 </style>

@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <div class="flex promo_content">
+  <div class="flex about_content">
     <div class="img">
       <img src="../assets/catalog2.jpg" alt="картинка промо">
     </div>
@@ -31,13 +31,14 @@
 </template>
 
 <style scoped>
-.promo_content {
-  padding: 30px 90px;
-  gap: 30px;
+.about_content {
+  padding: 30px 30px;
+  justify-content: space-evenly;
+
 }
 
 .text {
-  width: 59%;
+  max-width: 54%;
   padding-left: 30px;
 }
 
@@ -51,6 +52,7 @@
 }
 
 .text_about {
+  flex-wrap: wrap;
   gap: 20px;
 }
 
@@ -79,9 +81,9 @@
 }
 
 .img {
-  width: 538px;
-  height: 538px;
-  flex-shrink: 0;
+  width: 80%;
+  max-width: 538px;
+  height: auto;
   background-color: #F5F5F5;
   border-radius: 60px;
 }
@@ -96,22 +98,21 @@
 
 /* ===== Адаптив ===== */
 @media (max-width: 1024px) {
-  .promo_content {
+  .about_content {
     flex-direction: column;
     align-items: center;
     padding: 30px 20px;
   }
 
   .img {
-    width: 80%;
-    max-width: 538px;
-    height: auto;
-    aspect-ratio: 1 / 1;
-    order: -1;
+    display: none;
   }
 
   .text {
-    width: 100%;
+    /* font-size: 15px;
+    line-height: 25px; */
+    /* max-width: 0; */
+    max-width: 100%;
     padding-left: 0;
   }
 
@@ -132,7 +133,7 @@
 }
 
 @media (max-width: 480px) {
-  .promo_content {
+  .about_content {
     padding: 20px 15px;
   }
 
@@ -140,6 +141,7 @@
     width: 100%;
     border-radius: 40px;
   }
+
   .img img {
     border-radius: 40px;
   }
@@ -162,6 +164,7 @@
   .item h3 {
     font-size: 16px;
   }
+
   .item p {
     font-size: 14px;
     line-height: 18px;
