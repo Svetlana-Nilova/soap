@@ -8,22 +8,26 @@ import Reviews from "./components/reviews.vue"
 
 const showMenu = ref(false)
 const toggleMenu = () => { showMenu.value = !showMenu.value }
+const closeMenu = () => { showMenu.value = false }
 </script>
 
 <template>
   <header>
     <div class="flex flex_header">
       <div class="logo">
-        <img src="./assets/logo.png" alt="логотип">
+        <a href="./App.vue">
+          <img src="./assets/logo.png" alt="логотип">
+        </a>
       </div>
 
       <!-- Навигация -->
       <nav :class="{ active: showMenu }">
         <ul class="flex">
-          <li><a href="#">О нас</a></li>
-          <li><a href="#">Наше мыло</a></li>
-          <li><a href="#">Отзывы</a></li>
-          <li><a href="#">Контакты</a></li>
+          <li class="close" @click="closeMenu" :class="{ active: showMenu }"><button>закрыть</button></li>
+          <li><a href="#About" @click="closeMenu">О нас</a></li>
+          <li><a href="#Catalog" @click="closeMenu">Наше мыло</a></li>
+          <li><a href="#Reviews" @click="closeMenu">Отзывы</a></li>
+          <li><a href="#Contacts" @click="closeMenu">Контакты</a></li>
         </ul>
       </nav>
 
@@ -41,10 +45,23 @@ const toggleMenu = () => { showMenu.value = !showMenu.value }
 
   <main>
     <Promo />
-    <About />
-    <Catalog />
-    <Reviews />
-    <Contacts />
+    <div class="antverpen" id="About">
+
+      <About />
+    </div>
+    <div class="antverpen" id="Catalog">
+
+      <Catalog />
+    </div>
+    <div class="antverpen" id="Reviews">
+
+      <Reviews />
+    </div>
+    <div class="antverpen" id="Contacts">
+      <Contacts />
+
+    </div>
+
   </main>
 
   <footer>
@@ -119,7 +136,7 @@ a {
 }
 
 .logo img {
-  width: 100px;
+  width: 75px;
 }
 
 /* ===== Навигация ===== */
@@ -154,9 +171,11 @@ nav ul {
 .burger.active span:nth-child(1) {
   transform: translateY(9px) rotate(45deg);
 }
+
 .burger.active span:nth-child(2) {
   opacity: 0;
 }
+
 .burger.active span:nth-child(3) {
   transform: translateY(-9px) rotate(-45deg);
 }
@@ -198,6 +217,9 @@ main>* {
 .flex_footer a {
   color: #fff;
 }
+.flex_footer p {
+  order: 1;
+}
 
 .icons a {
   display: inline-block;
@@ -209,6 +231,7 @@ main>* {
   background-image: url(./assets/tg.svg);
   margin-right: 27px;
 }
+
 .vk {
   background-image: url(./assets/vk.svg);
   margin-left: 27px;
@@ -270,7 +293,6 @@ main>* {
 
   /* подвал */
   .flex_footer {
-    flex-direction: column;
     text-align: center;
   }
 
@@ -292,6 +314,7 @@ main>* {
   .tel img {
     width: 20px;
   }
+
   .tel a {
     font-size: 12px;
   }
@@ -309,6 +332,7 @@ main>* {
   .flex_footer p {
     font-size: 14px;
   }
+
   .icons a {
     width: 40px;
     height: 40px;

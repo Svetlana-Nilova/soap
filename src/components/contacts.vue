@@ -1,20 +1,24 @@
-<script setup></script>
+<script setup>
+
+</script>
 
 <template>
   <div class="flex cont">
     <div class="social">
       <div class="vk">
-        <img src="../assets/vkC.svg" alt="">
+        <img class="big" src="../assets/vkC.svg" alt="">
+        <img class="mini" src="../assets/vkCm.svg" alt="">
         <div class="tVk">
           <p>Мы вконтакте</p>
-          <button class="btnS a">vk.com</button>
+          <a class="btnS a">vk.com</a>
         </div>
       </div>
       <div class="tg">
-        <img src="../assets/tgC.svg" alt="">
+        <img class="big" src="../assets/tgC.svg" alt="">
+        <img class="mini" src="../assets/tgCm.svg" alt="">
         <div class="tTg">
           <p>Присоединяйтесь ко мне в Telegram</p>
-          <button class="btnS">@username</button>
+          <a class="btnS">@username</a>
         </div>
       </div>
     </div>
@@ -64,6 +68,12 @@
   cursor: pointer;
 }
 
+.btnS:hover {
+  background-color: #F5F5F5;
+  color: #BC7B6F;
+  border: 3px solid#BC7B6F;
+}
+
 .a {
   margin-top: 15px;
   padding: 12px 106px;
@@ -74,6 +84,10 @@
   position: relative;
   width: 100%;
   max-width: 500px;
+
+  a {
+    display: block;
+  }
 }
 
 .vk img,
@@ -265,8 +279,10 @@ form {
 
   .tVk p,
   .tTg p {
-    font-size: 16px;
-    line-height: 26px;
+    font-size: 15px;
+    line-height: 15px;
+
+
   }
 
   .btnS {
@@ -365,6 +381,7 @@ form {
     margin-top: 18px;
   }
 }
+
 @media (max-width: 480px) {
   .tTg p {
     margin-top: -2px;

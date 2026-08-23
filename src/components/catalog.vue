@@ -256,7 +256,7 @@ function back() {
   }
 
   .slides img {
-    height: 300px;
+    height: 550px;
   }
 }
 
@@ -274,7 +274,7 @@ function back() {
   }
 
   .slides img {
-    height: 200px;
+    height: 400px;
     border-width: 3px;
     border-radius: 16px;
   }
@@ -337,13 +337,11 @@ function back() {
   }
 
   .slides img {
-    height: 200px;
+    height: 300px;
   }
 
   .babl_item {
-    flex-direction: column;
-    text-align: center;
-    margin: 0;
+    margin: 0 6%;
   }
 
   .babl_item p {

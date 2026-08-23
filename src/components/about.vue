@@ -84,7 +84,6 @@
   width: 80%;
   max-width: 538px;
   height: auto;
-  background-color: #F5F5F5;
   border-radius: 60px;
 }
 
@@ -92,8 +91,8 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border: 3px solid #D9A69F;
   border-radius: 60px;
+    box-shadow: 0px 4px 4px 0px #00000080;
 }
 
 /* ===== Адаптив ===== */

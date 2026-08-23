@@ -173,12 +173,10 @@ function back() {
 @media (max-width: 1024px) {
   .revCont {
     height: auto;
-    min-height: 400px;
     border-radius: 20px;
   }
 
   .review {
-    flex-direction: column;
     padding: 20px;
     height: 100%;
     justify-content: center;
@@ -211,7 +209,6 @@ function back() {
 
   .revCont {
     border-radius: 16px;
-    min-height: 300px;
   }
 
   .review img {
@@ -235,6 +232,79 @@ function back() {
   .dot {
     width: 10px;
     height: 10px;
+  }
+}
+
+/* ===== Мобильная версия (≤480px): картинка слева, текст справа, кнопки под блоком ===== */
+@media (max-width: 480px) {
+  .conteiner {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .revCont {
+    order: 0;
+    width: 100%;
+    min-height: auto;
+    height: auto;
+    border-radius: 16px;
+  }
+
+  .slides {
+    height: auto;
+  }
+
+  .review {
+    flex-direction: row !important;
+    align-items: center;
+    padding: 15px;
+    gap: 15px;
+    justify-content: flex-start;
+    height: auto;
+  }
+
+  .review img {
+    width: 100px;
+    max-width: 100px;
+    height: 100px;
+    flex-shrink: 0;
+    aspect-ratio: 1 / 1;
+    border-radius: 16px;
+  }
+
+  .text {
+    text-align: left;
+    flex: 1;
+  }
+
+  .text p:first-child {
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+  .stars {
+    width: 100px;
+    height: 20px;
+  }
+  .text p:last-child {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  /* Кнопки (стрелки) под блоком, на одной линии */
+  .btn {
+    order: 1;
+    flex: 0 0 auto;
+    padding: 8px 8px;
+    min-width: 36px;
+    min-height: 36px;
+    border-width: 4px;
+    background-size: 50% 50%;
+    margin: 0 5px;
+  }
+
+  .dots {
+    display: none; /* можно оставить, если нужно – убери эту строку */
   }
 }
 </style>

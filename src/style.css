@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-padding-top: 85px;
+}
+
 :root {
   --text: #6b6375;
   --text-h: #08060d;
@@ -146,7 +150,6 @@ code {
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  overflow-x: hidden;
 }
 
 #center {
